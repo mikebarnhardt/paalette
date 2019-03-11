@@ -1,9 +1,0 @@
-.swatches {
-  display: flex;
-  flex-direction: column;
-}
-
-.swatch {
-  height: 50px;
-  width: 50px;
-}
