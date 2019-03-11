@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
 import Color from './color';
+import Footer from './footer';
+import StyledColors from './styled-colors';
 import StyledGlobal from './styled-global';
 import StyledPaalette from './styled-paalette';
 
@@ -21,7 +23,10 @@ function Paalette(props) {
   return (
     <StyledPaalette>
       <StyledGlobal/>
-      {colors.map((color, index) => <Color key={index} color={color} setColor={setColor}/>)}
+      <StyledColors>
+        {colors.map((color, index) => <Color key={index} color={color} setColor={setColor}/>)}
+      </StyledColors>
+      <Footer/>
     </StyledPaalette>
   );
 }

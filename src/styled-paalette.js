@@ -5,6 +5,7 @@ const StyledPaalette = styled.div`
   background-color: #f8f8f8;
   color: #484848;
   display: flex;
+  flex-direction: column;
   font-size: 16px;
   justify-content: center;
   min-height: 100vh;
