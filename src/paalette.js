@@ -24,7 +24,7 @@ function Paalette(props) {
     <StyledPaalette>
       <StyledGlobal/>
       <StyledColors>
-        {colors.map((color, index) => <Color key={index} color={color} setColor={setColor}/>)}
+        {colors.map((color, index) => <Color key={color} color={color} setColor={setColor}/>)}
       </StyledColors>
       <Footer/>
     </StyledPaalette>
