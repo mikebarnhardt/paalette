@@ -6,12 +6,14 @@ import StyledSwatch from './styled-swatch';
 
 function Swatch(props) {
   const {
+    backgroundColor,
     color,
+    description,
   } = props;
 
   return (
-    <StyledSwatch color={color}>
-      {color}
+    <StyledSwatch backgroundColor={backgroundColor} color={color}>
+      {description}: {backgroundColor}
     </StyledSwatch>
   );
 }
