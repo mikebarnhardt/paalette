@@ -14,7 +14,7 @@ function adjustColor(original, ratio, method) {
   const color = original.clone();
 
   while (tinycolor.readability(original, color) < ratio) {
-    if (tinycolor.readability(original, color) > ratio) {
+    if (tinycolor.readability(original, color) >= ratio) {
       break;
     }
 

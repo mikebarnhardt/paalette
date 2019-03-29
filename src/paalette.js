@@ -1,57 +1,86 @@
-import React, { useState } from 'react';
+import React, { useReducer } from 'react';
 import tinycolor from 'tinycolor2';
 
 import Color from './color';
+import Dispatch from './dispatch-context';
 import Footer from './footer';
+import Palette from './palette-context';
+import paletteReducer from './palette-reducer';
 import regenerateColor from './regenerate-color';
 import SettingsBar from './settings-bar';
 import StyledColors from './styled-colors';
 import StyledGlobal from './styled-global';
 import StyledPaalette from './styled-paalette';
 
+function generateId() {
+  return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+}
+
+// Vanilla Theme
+const initialState = ['#6a456a','#63d8f9','#b3dbff','#f9cdcf','#f39db7'];
+
+// Mako Theme
+// const initialState = ['#453e52','#2b4270','#1d514c'];
+
+function init(initialState) {
+  const state = {};
+  const names = ['base', 'primary', 'secondary'];
+
+  initialState.forEach((hex, index) => {
+    const color = tinycolor(hex);
+    const id = generateId();
+
+    state[id] = {
+      hue: color.toHsl().h,
+      id,
+      input: hex,
+      lightness: color.toHsl().l,
+      name: names[index],
+      palette: regenerateColor(hex),
+      saturation: color.toHsl().s,
+      sort: ++index,
+    };
+  });
+
+  return state;
+}
+
 function Paalette(props) {
-  const [theme, setTheme] = useState([
-    {id: 1, color: tinycolor('#957595'), input: '#957595', palette: regenerateColor('#957595')},
-    {id: 2, color: tinycolor('#33b1f9'), input: '#33b1f9', palette: regenerateColor('#33b1f9')},
-    {id: 3, color: tinycolor('#537bd9'), input: '#537bd9', palette: regenerateColor('#537bd9')},
-    {id: 4, color: tinycolor('#f39d97'), input: '#f39d97', palette: regenerateColor('#f39d97')},
-    {id: 5, color: tinycolor('#d37d97'), input: '#d37d97', palette: regenerateColor('#d37d97')},
-  ]);
-
-  function setColor(id, event) {
-    const color = event.target.value;
-    const oldColor = theme.find(c => c.id === id);
-    const index = theme.indexOf(
-      oldColor
-    );
-
-    theme[index].color = tinycolor(color);
-    theme[index].palette = regenerateColor(color);
-    theme[index].input = color;
-
-    setTheme([
-      ...theme.slice(0, index),
-      theme[index],
-      ...theme.slice(index + 1)
-    ]);
-  }
-
-  console.log(theme);
+  const [palette, dispatch] = useReducer(paletteReducer, initialState, init);
 
   return (
-    <StyledPaalette>
-      <StyledGlobal/>
+    <Dispatch.Provider value={dispatch}>
+      <Palette.Provider value={palette}>
+        <StyledPaalette>
+          <StyledGlobal/>
 
-      <SettingsBar/>
+          <SettingsBar/>
 
-      <div style={{flex: 1}}>
-        <StyledColors>
-          {theme.map(({color, id, input, palette}) => <Color key={id} color={color} id={id} input={input} palette={palette} setColor={setColor}/>)}
-        </StyledColors>
-      </div>
+          <div style={{flex: 1}}>
+            <StyledColors>
+              {Object
+                .keys(palette)
+                .sort((a,b) => palette[a].sort > palette[b].sort)
+                .map(id => <Color key={id} color={palette[id]}/>)
+              }
+            </StyledColors>
+            <p style={{color: '#9999a8', fontSize: '0.8rem', margin: 0}}>
+              <strong
+                style={{
+                  color: 'lightcoral'
+                }}
+              >
+                Tip:
+              </strong>
+              {' Drag the sliders until red and orange borders disappear!'}
+            </p>
+          </div>
 
-      <Footer/>
-    </StyledPaalette>
+
+          <Footer/>
+        </StyledPaalette>
+      </Palette.Provider>
+    </Dispatch.Provider>
   );
 }
 

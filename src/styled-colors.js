@@ -2,7 +2,9 @@ import styled from 'styled-components';
 
 const StyledColors = styled.div`
   display: flex;
-  padding: 3rem 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1rem;
 `;
 
 export default StyledColors;
