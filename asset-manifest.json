@@ -1,11 +1,11 @@
 {
-  "main.js": "/paalette/static/js/main.dd9102a2.chunk.js",
-  "main.js.map": "/paalette/static/js/main.dd9102a2.chunk.js.map",
+  "main.js": "/paalette/static/js/main.be9b2de0.chunk.js",
+  "main.js.map": "/paalette/static/js/main.be9b2de0.chunk.js.map",
   "runtime~main.js": "/paalette/static/js/runtime~main.374e78f8.js",
   "runtime~main.js.map": "/paalette/static/js/runtime~main.374e78f8.js.map",
-  "static/js/2.124c6fe6.chunk.js": "/paalette/static/js/2.124c6fe6.chunk.js",
-  "static/js/2.124c6fe6.chunk.js.map": "/paalette/static/js/2.124c6fe6.chunk.js.map",
+  "static/js/2.0f0b3fef.chunk.js": "/paalette/static/js/2.0f0b3fef.chunk.js",
+  "static/js/2.0f0b3fef.chunk.js.map": "/paalette/static/js/2.0f0b3fef.chunk.js.map",
   "index.html": "/paalette/index.html",
-  "precache-manifest.2b8c36527ea83582afd0e471357500de.js": "/paalette/precache-manifest.2b8c36527ea83582afd0e471357500de.js",
+  "precache-manifest.1b100c0970a3ad992a4303ebbd42c4fa.js": "/paalette/precache-manifest.1b100c0970a3ad992a4303ebbd42c4fa.js",
   "service-worker.js": "/paalette/service-worker.js"
 }
