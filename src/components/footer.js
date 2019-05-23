@@ -1,5 +1,7 @@
 import React from 'react';
-import pkg from '../package.json';
+import pkg from '../../package.json';
+
+import '../styles/footer.css';
 
 function Footer() {
   return (
@@ -7,12 +9,8 @@ function Footer() {
       <p>
         <a
           href="https://github.com/mikebarnhardt/paalette"
-          style={{
-            borderBottom: '2px solid #78788c',
-            color: 'lightcoral',
-            fontSize: '0.8rem',
-            textDecoration: 'none'
-          }}
+          rel="noopener noreferrer"
+          target="_blank"
         >
           {pkg.version}
         </a>

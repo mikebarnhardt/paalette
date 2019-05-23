@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Paalette from './paalette';
-import * as serviceWorker from './serviceWorker';
+import Paalette from './components/paalette';
+import * as serviceWorker from './utilities/serviceWorker';
+
+import './styles/global.css';
 
 ReactDOM.render(<Paalette />, document.getElementById('root'));
 

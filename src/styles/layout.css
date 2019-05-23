@@ -1,0 +1,40 @@
+.o-layout {
+  display: flex;
+  margin-bottom: calc(1rem - 0.5rem);
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+  margin-top: -0.5rem;
+}
+
+  .o-layout-item {
+    padding: 0.5rem;
+  }
+
+  .o-layout-item.is-aligned-middle {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .o-layout-item.is-expanded {
+    flex: 1;
+  }
+
+.o-layout.is-flush {
+  margin: 0;
+}
+
+  .o-layout.is-flush > .o-layout-item {
+    padding: 0;
+  }
+
+.o-layout.is-full-height {
+  min-height: 100vh;
+}
+
+.o-layout.is-horizontal {
+  flex-direction: row;
+}
+
+.o-layout.is-vertical {
+  flex-direction: column;
+}
