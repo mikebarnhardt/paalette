@@ -1,5 +1,6 @@
 .o-layout {
   display: flex;
+  flex-direction: column;
   margin-bottom: calc(1rem - 0.5rem);
   margin-left: -0.5rem;
   margin-right: -0.5rem;
@@ -33,6 +34,13 @@
 
 .o-layout.is-horizontal {
   flex-direction: row;
+}
+
+@media screen and (min-width: 900px) {
+  /* Only use horizontal display on larger displays */
+  .o-layout.is-horizontal\@for-tablet-landscape-up {
+    flex-direction: row;
+  }
 }
 
 .o-layout.is-vertical {

@@ -33,7 +33,7 @@ function Paalette(props) {
 
   return (
     <div className="o-layout is-flush is-full-height is-vertical">
-      <div className="o-layout is-flush is-horizontal o-layout-item is-expanded">
+      <div className="o-layout is-flush is-horizontal@for-tablet-landscape-up o-layout-item is-expanded">
         {colors.map(color => {
           if (!tinycolor(color).isValid()) {
             return;
