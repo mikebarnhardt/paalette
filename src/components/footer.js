@@ -1,8 +1,6 @@
 import React from 'react';
 import pkg from '../../package.json';
 
-import '../styles/footer.css';
-
 function Footer() {
   return (
     <footer>

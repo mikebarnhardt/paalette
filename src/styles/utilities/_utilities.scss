@@ -1,0 +1,9 @@
+.is-first {
+  order: -1;
+}
+
+@media screen and (max-width: 899px) {    
+  .is-first\@for-tablet-portrait-and-down {
+    order: -1;
+  }
+}

@@ -1,13 +1,7 @@
 import React, {useState} from 'react';
 import tinycolor from 'tinycolor2';
 
-// import Colors from './colors';
 import Footer from './footer';
-// import SettingsBar from './settings-bar';
-
-import '../styles/layout.css';
-import '../styles/swatches.css';
-import '../styles/text-input.css';
 
 function getColor(color1, color2, ratio, method) {
   const color = tinycolor(color1).clone();
@@ -83,6 +77,8 @@ function Paalette(props) {
               </div> */}
 
               <div className="c-swatches">
+                <button className="c-swatches-options">Cogwheel</button>
+
                 {Object.keys(swatches).map(value => {
                   let colorValue = value < 50 ? (parseInt(value, 10) + 50) : (parseInt(value, 10) - 50);
 
@@ -104,9 +100,9 @@ function Paalette(props) {
           );
         })}
 
-        {/* <div className="o-layout-item is-aligned-middle">
+        <div className="o-layout-item is-first@for-tablet-portrait-and-down">
           <button className="c-add-swatch">+</button>
-        </div> */}
+        </div>
       </div>
 
       <Footer/>

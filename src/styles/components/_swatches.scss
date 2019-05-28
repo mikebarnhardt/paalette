@@ -1,0 +1,53 @@
+.c-swatches {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+}
+
+  .c-swatches:hover .c-swatches-options {
+    display: block;
+  }
+
+.c-swatches-options {
+  background-color: ghostwhite;
+  border: 0;
+  color: mediumslateblue;
+  cursor: pointer;
+  display: none;
+  line-height: 1;
+  padding: 0.5rem;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+
+  .c-swatches-options:hover {
+    background-color: mediumslateblue;
+    color: ghostwhite;
+  }
+
+.c-swatch {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  font-size: 1rem;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.c-add-swatch {
+  background-color: ghostwhite;
+  border: 0;
+  color: mediumslateblue;
+  font-size: 32px;
+  height: 100%;
+  padding: 1rem;
+  cursor: pointer;
+  width: 100%;
+}
+
+  .c-add-swatch:hover {
+    background-color: mediumslateblue;
+    color: ghostwhite;
+  }

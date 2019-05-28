@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import Paalette from './components/paalette';
 import * as serviceWorker from './utilities/serviceWorker';
 
-import './styles/global.css';
+import './styles/styles.scss';
 
 ReactDOM.render(<Paalette />, document.getElementById('root'));
 
