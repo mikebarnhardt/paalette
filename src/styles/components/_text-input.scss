@@ -1,6 +1,11 @@
+$text-input-background-color: $color;
+$text-input-border-color: $background-color;
+$text-input-color: $background-color;
+
 .c-text-input {
-  border: 1px solid mediumslateblue;
-  color: inherit;
-  padding: 0.5rem;
+  background-color: $text-input-background-color;
+  border: ($spacing * 0.125) solid $text-input-border-color;
+  color: $text-input-color;
+  padding: (($spacing * 0.5) - $spacing * 0.125) ($spacing - ($spacing * 0.125));
   width: 100%;
 }

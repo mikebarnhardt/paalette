@@ -1,0 +1,29 @@
+$button-background-color: $background-color;
+$button-color: $color;
+$button-background-color-active: $background-color-active;
+$button-color-active: $color-active;
+$button-background-color-inactive: $background-color-inactive;
+$button-color-inactive: $color-inactive;
+
+.c-button {
+  background-color: $button-background-color;
+  border: 0;
+  color: $button-color;
+  cursor: pointer;
+  padding: ($spacing * 0.5) $spacing;
+  white-space: nowrap;
+}
+
+  .c-button.is-active,
+  .c-button:focus,
+  .c-button:hover {
+    background-color: $button-background-color-active;
+    color: $button-color-active;
+  }
+
+  .c-button.is-inactive,
+  .c-button[disabled] {
+    background-color: $button-background-color-inactive;
+    color: $button-color-inactive;
+    cursor: not-allowed;
+  }

@@ -1,8 +1,15 @@
+@import "./settings/base";
+@import "./settings/color";
+@import "./settings/spacing";
+
 @import "./globals/box-sizing";
 
 @import "./objects/layout";
 
+@import "./components/button";
 @import "./components/footer";
+@import "./components/nav";
+@import "./components/nav-item";
 @import "./components/swatches";
 @import "./components/text-input";
 

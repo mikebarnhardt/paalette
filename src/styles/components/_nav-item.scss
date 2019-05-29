@@ -1,0 +1,12 @@
+.c-nav-item {
+  padding: $spacing;
+}
+
+  .c-nav-item.is-expanded {
+    flex: 1;
+  }
+
+.c-nav-item > a {
+  color: inherit;
+  text-decoration: underline;
+}

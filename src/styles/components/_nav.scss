@@ -1,0 +1,10 @@
+$nav-background-color: $color;
+$nav-color: $background-color;
+
+.c-nav {
+  align-items: center;
+  background-color: $nav-background-color;
+  color: $nav-color;
+  display: flex;
+  padding: $spacing;
+}
